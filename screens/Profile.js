@@ -3,8 +3,19 @@ import { StyleSheet, Text, View, Button } from "react-native";
 export default function Profile({ navigation }) {
   return (
     <View>
-      <Text style={styles.container}>This is a test</Text>
+      <View style={styles.leftSideBar}>
+
+      </View>
+      <form>
+        <label>
+          Religion: <br></br>
+          <textarea type="text" name="name" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form> 
       <Button onPress={() => navigation.navigate("Market")}></Button>
+
+    
     </View>
   );
 }
@@ -16,4 +27,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  leftSideBar: {
+    backgroundColor: 'black'
+  }
 });
