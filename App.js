@@ -8,6 +8,7 @@ export default function App() {
       <StatusBar style="auto" />
 
       <Text>This is a test</Text>
+      <Text>This is not a test - we are getting serious</Text>
     </View>
   );
 }
