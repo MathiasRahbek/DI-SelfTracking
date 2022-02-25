@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import {
   StyleSheet,
@@ -8,7 +8,10 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Modal,
 } from "react-native";
+
+import { DataContext } from "./../App";
 
 export default function Profile({ navigation }) {
   const [text1, onChangeText1] = useState("");
@@ -16,7 +19,25 @@ export default function Profile({ navigation }) {
   const [text3, onChangeText3] = useState("");
   const [text4, onChangeText4] = useState("");
   const [text5, onChangeText5] = useState("");
-  const [text6, onChangeText6] = useState("");
+  const {
+    addFunction1,
+    addFunction2,
+    addFunction3,
+    addFunction4,
+    addFunction5,
+  } = useContext(DataContext);
+
+  const dataDemand1 = "Hours of Netflix watched this week";
+  const dataDemand2 = "Your personal income";
+  const dataDemand3 = "Recent Google searches";
+  const dataDemand4 = "Your vote for the election";
+  const dataDemand5 = "Medicaments you have taken";
+
+  const price1 = "$0.1";
+  const price2 = "$0.2";
+  const price3 = "$0.15";
+  const price4 = "$0.26";
+  const price5 = "$0.57";
 
   return (
     <ScrollView>
@@ -27,6 +48,7 @@ export default function Profile({ navigation }) {
             style={styles.profilePicture}
             source={require("../assets/pictures/profilepic.jpg")}
           ></Image>
+
           <Text style={styles.profileName}>Tim Johnson</Text>
 
           {/* Profile information */}
@@ -47,6 +69,7 @@ export default function Profile({ navigation }) {
           </View>
           <Text style={styles.fontHeaderBold}>Balance:</Text>
           <Text style={styles.fontHeaderNormal}>$240.55</Text>
+          <br></br>
           <TouchableOpacity
             style={styles.stdButton}
             onPress={() => navigation.navigate("Stats")}
@@ -61,9 +84,7 @@ export default function Profile({ navigation }) {
           <Text style={styles.underHeadline}>Data activity</Text>
 
           {/* Input 1 */}
-          <Text style={styles.fontBold}>
-            Hours of Netflix watched this week
-          </Text>
+          <Text style={styles.fontBold}>{dataDemand1} </Text>
           <TextInput
             style={styles.inputSection}
             placeholder={"Aa"}
@@ -74,7 +95,7 @@ export default function Profile({ navigation }) {
           {/* Input 2 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>Your personal income</Text>
+          <Text style={styles.fontBold}>{dataDemand2} </Text>
           <TextInput
             style={styles.inputSection}
             placeholder={"Aa"}
@@ -85,7 +106,7 @@ export default function Profile({ navigation }) {
           {/* Input 3 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>Recent Google searches</Text>
+          <Text style={styles.fontBold}>{dataDemand3} </Text>
           <TextInput
             style={styles.inputSection}
             placeholder={"Aa"}
@@ -96,7 +117,7 @@ export default function Profile({ navigation }) {
           {/* Input 4 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>Your vote for the election</Text>
+          <Text style={styles.fontBold}>{dataDemand4} </Text>
           <TextInput
             style={styles.inputSection}
             placeholder={"Aa"}
@@ -107,7 +128,7 @@ export default function Profile({ navigation }) {
           {/* Input 5 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>Your vote for the election</Text>
+          <Text style={styles.fontBold}>{dataDemand5} </Text>
           <TextInput
             style={styles.inputSection}
             placeholder={"Aa"}
@@ -115,16 +136,6 @@ export default function Profile({ navigation }) {
             value={text5}
           ></TextInput>
 
-          {/* Input 6 */}
-          <br></br>
-          <br></br>
-          <Text style={styles.fontBold}>Your vote for the election</Text>
-          <TextInput
-            style={styles.inputSection}
-            placeholder={"Aa"}
-            onChangeText={onChangeText6}
-            value={text6}
-          ></TextInput>
           <View style={{ alignItems: "center", justifyContent: "center" }}>
             <TouchableOpacity
               style={styles.stdButton}
@@ -143,10 +154,17 @@ export default function Profile({ navigation }) {
           <Text style={styles.underHeadline}>Price</Text>
 
           {/* Sell button 1 */}
-          <Text style={styles.fontBold}>$0.1</Text>
+          <Text style={styles.fontBold}>{price1}</Text>
           <TouchableOpacity
             style={styles.sellButton}
-            onPress={() => navigation.navigate("Stats")}
+            onPress={() => {
+              addFunction1({
+                text1: text1,
+                dataDemand1: dataDemand1,
+                price1: price1,
+              });
+              onChangeText1("");
+            }}
           >
             <Text style={styles.fontBoldWhite}>Sell</Text>
           </TouchableOpacity>
@@ -154,10 +172,17 @@ export default function Profile({ navigation }) {
           {/* Sell button 2 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>$0.2</Text>
+          <Text style={styles.fontBold}>{price2}</Text>
           <TouchableOpacity
             style={styles.sellButton}
-            onPress={() => navigation.navigate("Stats")}
+            onPress={() => {
+              addFunction2({
+                text2: text2,
+                dataDemand2: dataDemand2,
+                price2: price2,
+              });
+              onChangeText2("");
+            }}
           >
             <Text style={styles.fontBoldWhite}>Sell</Text>
           </TouchableOpacity>
@@ -165,10 +190,17 @@ export default function Profile({ navigation }) {
           {/* Sell button 3 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>$0.15</Text>
+          <Text style={styles.fontBold}>{price3}</Text>
           <TouchableOpacity
             style={styles.sellButton}
-            onPress={() => navigation.navigate("Stats")}
+            onPress={() => {
+              addFunction3({
+                text3: text3,
+                dataDemand3: dataDemand3,
+                price3: price3,
+              });
+              onChangeText3("");
+            }}
           >
             <Text style={styles.fontBoldWhite}>Sell</Text>
           </TouchableOpacity>
@@ -176,10 +208,17 @@ export default function Profile({ navigation }) {
           {/* Sell button 4 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>$0.26</Text>
+          <Text style={styles.fontBold}>{price4}</Text>
           <TouchableOpacity
             style={styles.sellButton}
-            onPress={() => navigation.navigate("Stats")}
+            onPress={() => {
+              addFunction4({
+                text4: text4,
+                dataDemand4: dataDemand4,
+                price4: price4,
+              });
+              onChangeText4("");
+            }}
           >
             <Text style={styles.fontBoldWhite}>Sell</Text>
           </TouchableOpacity>
@@ -187,21 +226,17 @@ export default function Profile({ navigation }) {
           {/* Sell button 5 */}
           <br></br>
           <br></br>
-          <Text style={styles.fontBold}>$0.26</Text>
+          <Text style={styles.fontBold}>{price5}</Text>
           <TouchableOpacity
             style={styles.sellButton}
-            onPress={() => navigation.navigate("Stats")}
-          >
-            <Text style={styles.fontBoldWhite}>Sell</Text>
-          </TouchableOpacity>
-
-          {/* Sell button 6 */}
-          <br></br>
-          <br></br>
-          <Text style={styles.fontBold}>$0.26</Text>
-          <TouchableOpacity
-            style={styles.sellButton}
-            onPress={() => navigation.navigate("Stats")}
+            onPress={() => {
+              addFunction5({
+                text5: text5,
+                dataDemand5: dataDemand5,
+                price5: price5,
+              });
+              onChangeText5("");
+            }}
           >
             <Text style={styles.fontBoldWhite}>Sell</Text>
           </TouchableOpacity>
@@ -293,7 +328,7 @@ const styles = StyleSheet.create({
   },
 
   stdButton: {
-    marginTop: 50,
+    marginTop: 20,
     width: 150,
     height: 50,
     backgroundColor: "#3B5B81",
