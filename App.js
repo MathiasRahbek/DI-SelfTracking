@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 import Profile from "./screens/Profile";
 import Market from "./screens/Market";
@@ -13,12 +13,21 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRout="Profile">
+      <Stack.Navigator
+        initialRout="Profile"
+        screenOptions={{
+          headerTintColor: "white",
+          headerStyle: {
+            backgroundColor: "#3B5B81",
+          },
+        }}
+      >
         <Stack.Screen
           name="Profile" // Name for the page, used to reference it when navigating.
           component={Profile} // Which Component should be rendered when the page is shown?
           options={{
-            title: "Data eState",
+            headerTitleAlign: "center",
+            headerTitle: (props) => <ProfilePicture {...props} />,
             headerShown: true,
           }}
         />
@@ -26,7 +35,8 @@ export default function App() {
           name="Market"
           component={Market}
           options={{
-            title: "Market",
+            headerTitleAlign: "center",
+            headerTitle: (props) => <MarketPicture {...props} />,
             headerShown: true,
           }}
         />
@@ -34,12 +44,43 @@ export default function App() {
           name="Stats"
           component={Stats}
           options={{
-            title: "Stats",
+            headerTitleAlign: "center",
+            headerTitle: (props) => <StatsPicture {...props} />,
             headerShown: true,
           }}
         />
       </Stack.Navigator>
     </NavigationContainer>
+  );
+}
+
+function ProfilePicture() {
+  return (
+    <Image
+      style={{ width: 250, height: 33, marginBottom: 20, marginTop: 20 }}
+      source={require("./assets/pictures/dataestate.jpg")}
+      resizeMode="contain"
+    />
+  );
+}
+
+function MarketPicture() {
+  return (
+    <Image
+      style={{ width: 250, height: 33, marginBottom: 20, marginTop: 20 }}
+      source={require("./assets/pictures/market.jpg")}
+      resizeMode="contain"
+    />
+  );
+}
+
+function StatsPicture() {
+  return (
+    <Image
+      style={{ width: 250, height: 33, marginBottom: 20, marginTop: 20 }}
+      source={require("./assets/pictures/datavalue.jpg")}
+      resizeMode="contain"
+    />
   );
 }
 
