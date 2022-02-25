@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function Profile({ navigation }) {
+<<<<<<< Updated upstream
   return (
     <View>
       <View style={styles.leftSideBar}>
@@ -18,6 +19,9 @@ export default function Profile({ navigation }) {
     
     </View>
   );
+=======
+  return <View style={styles.container}></View>;
+>>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({
@@ -26,6 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "row",
   },
   leftSideBar: {
     backgroundColor: 'black'
