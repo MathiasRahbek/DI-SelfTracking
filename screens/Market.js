@@ -21,8 +21,18 @@ import { DataContext } from "./../App";
 import reddot from "../assets/pictures/reddot.gif";
 
 export default function Market({ navigation }) {
-  const { DataList1, DataList2, DataList3, DataList4, DataList5 } =
-    useContext(DataContext);
+  const {
+    DataList1,
+    DataList2,
+    DataList3,
+    DataList4,
+    DataList5,
+    deleteFunction1,
+    deleteFunction2,
+    deleteFunction3,
+    deleteFunction4,
+    deleteFunction5,
+  } = useContext(DataContext);
   return (
     <View style={styles.container}>
       <View style={styles.marketSection}>
@@ -37,6 +47,7 @@ export default function Market({ navigation }) {
               text1={text1.text1}
               dataDemand1={text1.dataDemand1}
               price1={text1.price1}
+              handleDeleteFunction1={deleteFunction1}
             />
           ))}
           {DataList2.map((text2, index) => (
@@ -45,6 +56,7 @@ export default function Market({ navigation }) {
               text2={text2.text2}
               dataDemand2={text2.dataDemand2}
               price2={text2.price2}
+              handleDeleteFunction2={deleteFunction2}
             />
           ))}
           {DataList3.map((text3, index) => (
@@ -53,6 +65,7 @@ export default function Market({ navigation }) {
               text3={text3.text3}
               dataDemand3={text3.dataDemand3}
               price3={text3.price3}
+              handleDeleteFunction3={deleteFunction3}
             />
           ))}
           {DataList4.map((text4, index) => (
@@ -61,6 +74,7 @@ export default function Market({ navigation }) {
               text4={text4.text4}
               dataDemand4={text4.dataDemand4}
               price4={text4.price4}
+              handleDeleteFunction4={deleteFunction4}
             />
           ))}
           {DataList5.map((text5, index) => (
@@ -69,6 +83,7 @@ export default function Market({ navigation }) {
               text5={text5.text5}
               dataDemand5={text5.dataDemand5}
               price5={text5.price5}
+              handleDeleteFunction5={deleteFunction5}
             />
           ))}
 

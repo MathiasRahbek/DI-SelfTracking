@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function TextItem3(props) {
   return (
@@ -17,9 +17,12 @@ export default function TextItem3(props) {
           <Text style={styles.fontNormal}>{props.text3}</Text>
         </View>
         {/* Buy button */}
-        <View style={styles.buyButton}>
+        <TouchableOpacity
+          style={styles.buyButton}
+          onPress={() => props.handleDeleteFunction3(props.id)}
+        >
           <Text style={styles.fontNormalWhite}>Buy</Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <Text style={styles.smallText}>Just now ...</Text>
     </View>
