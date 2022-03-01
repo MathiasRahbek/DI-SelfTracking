@@ -28,15 +28,18 @@ export default function Profile({ navigation }) {
   } = useContext(DataContext);
 
   const dataDemand1 = "Hours of Netflix watched this week";
-  const dataDemand2 = "Your personal income";
-  const dataDemand3 = "Recent Google searches";
-  const dataDemand4 = "Your vote for the election";
-  const dataDemand5 = "Medicaments you have taken";
-
   const price1 = "$0.1";
+
+  const dataDemand2 = "Your personal income";
   const price2 = "$0.2";
+
+  const dataDemand3 = "Recent Google searches";
   const price3 = "$0.15";
+
+  const dataDemand4 = "Your vote for the election";
   const price4 = "$0.26";
+
+  const dataDemand5 = "Medicaments you have taken";
   const price5 = "$0.57";
 
   return (
