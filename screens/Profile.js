@@ -44,10 +44,10 @@ export default function Profile({ navigation }) {
       <View style={styles.container}>
         <View style={styles.profileSection}>
           {/* Profile section */}
-          <Image
+          {/* <Image
             style={styles.profilePicture}
             source={require("../assets/pictures/profilepic.jpg")}
-          ></Image>
+          ></Image> */}
 
           <Text style={styles.profileName}>Tim Johnson</Text>
 
