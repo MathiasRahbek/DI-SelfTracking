@@ -29,20 +29,20 @@ export default function Profile({ navigation }) {
     addFunction5,
   } = useContext(DataContext);
 
-  const dataDemand1 = "Your recent 50 Google searches";
-  const price1 = "$0.15";
+  const dataDemand1 = "The CPR-number of your child, Blake";
+  const price1 = "$1.55";
 
   const dataDemand2 = "*Automatically detected from Apple Watch*";
-  const price2 = "$0.2";
+  const price2 = "$0.49";
 
   const dataDemand3 = "Your vote for the election";
-  const price3 = "$0.15";
+  const price3 = "$0.25";
 
   const dataDemand4 = "Recommended for you: Siri voice tracking";
   const price4 = "$0.99";
 
-  const dataDemand5 = "Medicaments you have taken";
-  const price5 = "$0.57";
+  const dataDemand5 = "Medicaments you have taken over the last 365 days";
+  const price5 = "$0.89";
 
   return (
     <ScrollView>

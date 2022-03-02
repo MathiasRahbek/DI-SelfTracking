@@ -51,65 +51,64 @@ export default function Stats({ navigation }) {
       </View>
       <View style={styles.graphSection}>
         {/* <Image style={styles.graphImg} source={graph} /> */}
-        <View>
-          <LineChart
-            data={{
-              labels: [
-                "25.02.22",
-                "26.02.22",
-                "27.02.22",
-                "28.02.22",
-                "01.03.22",
-                "02.03.22",
-              ],
-              datasets: [
-                {
-                  data: ["0.52", "0.2", "0.8", "0.35", "0.5", "0.2"],
-                  color: () => "red",
-                },
-                {
-                  data: ["0.71", "0.6", "0.3", "0.5", "0.3", "0.4"],
-                  color: () => "green",
-                },
-                {
-                  data: ["0.37", "0.2", "0.5", "0.1", "0.2", "0.6"],
-                  color: () => "purple",
-                },
-                {
-                  data: ["0.54", "0.7", "0.64", "0.75", "0.8", "0.75"],
-                  color: () => "pink",
-                },
-                {
-                  data: ["0.32", "0.4", "0.1", "0.3", "0.5", "0.2"],
-                  color: () => "lightblue",
-                },
-                {
-                  data: ["0.42", "0.42", "0.5", "0.48", "0.48", "0.44"],
-                  color: () => "black",
-                },
-              ],
-            }}
-            width={800} // from react-native
-            height={550}
-            yAxisLabel="$"
-            yAxisInterval={1} // optional, defaults to 1
-            chartConfig={{
-              backgroundGradientFrom: "#EFF5FD",
-              backgroundGradientTo: "#EFF5FD",
-              decimalPlaces: 2, // optional, defaults to 2dp
-              fillShadowGradient: "#EFF5FD",
-              fillShadowGradientTo: "#EFF5FD",
-              color: () => "#3B5B81",
-              labelColor: () => "#3B5B81",
-              style: {
-                borderRadius: 1,
+        <Text style={styles.header2}>Index price</Text>
+        <LineChart
+          data={{
+            labels: [
+              "25.02.22",
+              "26.02.22",
+              "27.02.22",
+              "28.02.22",
+              "01.03.22",
+              "02.03.22",
+            ],
+            datasets: [
+              {
+                data: ["0.52", "0.5", "0.7", "0.6", "0.5", "0.67"],
+                color: () => "red",
               },
-              propsForDots: {
-                r: "4",
+              {
+                data: ["0.61", "0.6", "0.4", "0.5", "0.6", "0.65"],
+                color: () => "green",
               },
-            }}
-          />
-        </View>
+              {
+                data: ["0.47", "0.5", "0.5", "0.6", "0.48", "0.52"],
+                color: () => "purple",
+              },
+              {
+                data: ["0.54", "0.7", "0.64", "0.75", "0.8", "0.75"],
+                color: () => "pink",
+              },
+              {
+                data: ["0.49", "0.55", "0.54", "0.4", "0.44", "0.38"],
+                color: () => "lightblue",
+              },
+              {
+                data: ["0.42", "0.42", "0.48", "0.48", "0.48", "0.44"],
+                color: () => "black",
+              },
+            ],
+          }}
+          width={800} // from react-native
+          height={550}
+          yAxisLabel="$"
+          yAxisInterval={1} // optional, defaults to 1
+          chartConfig={{
+            backgroundGradientFrom: "rgb(255,255,255,0)",
+            backgroundGradientTo: "rgb(255,255,255,0)",
+            decimalPlaces: 2, // optional, defaults to 2dp
+            fillShadowGradient: "#EFF5FD",
+            fillShadowGradientTo: "#EFF5FD",
+            color: () => "black",
+            labelColor: () => "black",
+            style: {
+              borderRadius: 1,
+            },
+            propsForDots: {
+              r: "4",
+            },
+          }}
+        />
       </View>
     </View>
   );
@@ -143,6 +142,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 30,
     marginBottom: 50,
+  },
+
+  header2: {
+    fontWeight: "bold",
+    fontSize: 30,
+    marginBottom: 20,
   },
 
   fontNormal: {
