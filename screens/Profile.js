@@ -15,9 +15,11 @@ import { DataContext } from "./../App";
 
 export default function Profile({ navigation }) {
   const [text1, onChangeText1] = useState("");
-  const [text2, onChangeText2] = useState("");
+  const [text2, onChangeText2] = useState("Last 48 hours of health tracking");
   const [text3, onChangeText3] = useState("");
-  const [text4, onChangeText4] = useState("");
+  const [text4, onChangeText4] = useState(
+    "One full day of recorded voice data"
+  );
   const [text5, onChangeText5] = useState("");
   const {
     addFunction1,
@@ -27,17 +29,17 @@ export default function Profile({ navigation }) {
     addFunction5,
   } = useContext(DataContext);
 
-  const dataDemand1 = "Hours of Netflix watched this week";
-  const price1 = "$0.1";
+  const dataDemand1 = "Your recent 50 Google searches";
+  const price1 = "$0.15";
 
-  const dataDemand2 = "Your personal income";
+  const dataDemand2 = "*Automatically detected from Apple Watch*";
   const price2 = "$0.2";
 
-  const dataDemand3 = "Recent Google searches";
+  const dataDemand3 = "Your vote for the election";
   const price3 = "$0.15";
 
-  const dataDemand4 = "Your vote for the election";
-  const price4 = "$0.26";
+  const dataDemand4 = "Recommended for you: Siri voice tracking";
+  const price4 = "$0.99";
 
   const dataDemand5 = "Medicaments you have taken";
   const price5 = "$0.57";

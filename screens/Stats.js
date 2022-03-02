@@ -12,17 +12,6 @@ import {
 import graph from "../assets/pictures/graph.jpg";
 
 export default function Stats({ navigation }) {
-  const chartConfig = {
-    backgroundGradientFrom: "#1E2923",
-    backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: "#08130D",
-    backgroundGradientToOpacity: 0.5,
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-    strokeWidth: 2, // optional, default 3
-    barPercentage: 0.5,
-    useShadowColorFromDataset: false, // optional
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.typeSection}>
@@ -75,47 +64,49 @@ export default function Stats({ navigation }) {
               ],
               datasets: [
                 {
-                  data: ["200", "10", "250", "400", "100", "180"],
+                  data: ["0.52", "0.2", "0.8", "0.35", "0.5", "0.2"],
+                  color: () => "red",
                 },
                 {
-                  data: ["100", "150", "100", "250", "10", "300"],
+                  data: ["0.71", "0.6", "0.3", "0.5", "0.3", "0.4"],
+                  color: () => "green",
                 },
                 {
-                  data: ["300", "80", "40", "200", "50", "100"],
+                  data: ["0.37", "0.2", "0.5", "0.1", "0.2", "0.6"],
+                  color: () => "purple",
                 },
                 {
-                  data: ["50", "100", "80", "210", "40", "50"],
+                  data: ["0.54", "0.7", "0.64", "0.75", "0.8", "0.75"],
+                  color: () => "pink",
                 },
                 {
-                  data: ["75", "210", "150", "90", "270", "350"],
+                  data: ["0.32", "0.4", "0.1", "0.3", "0.5", "0.2"],
+                  color: () => "lightblue",
+                },
+                {
+                  data: ["0.42", "0.42", "0.5", "0.48", "0.48", "0.44"],
+                  color: () => "black",
                 },
               ],
             }}
             width={800} // from react-native
-            height={520}
+            height={550}
             yAxisLabel="$"
-            yAxisSuffix="k"
             yAxisInterval={1} // optional, defaults to 1
             chartConfig={{
-              backgroundColor: "#FFFFF",
               backgroundGradientFrom: "#EFF5FD",
               backgroundGradientTo: "#EFF5FD",
               decimalPlaces: 2, // optional, defaults to 2dp
-              color: (opacity = 1) => `rgb(255,255,255), ${opacity})`,
-              labelColor: (opacity = 1) => `rgb(255,255,255), ${opacity})`,
+              fillShadowGradient: "#EFF5FD",
+              fillShadowGradientTo: "#EFF5FD",
+              color: () => "#3B5B81",
+              labelColor: () => "#3B5B81",
               style: {
                 borderRadius: 1,
               },
               propsForDots: {
                 r: "4",
-                strokeWidth: "1",
-                stroke: "lightblue",
               },
-            }}
-            bezier
-            style={{
-              marginVertical: 8,
-              borderRadius: 16,
             }}
           />
         </View>
