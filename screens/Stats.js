@@ -63,42 +63,53 @@ export default function Stats({ navigation }) {
       <View style={styles.graphSection}>
         {/* <Image style={styles.graphImg} source={graph} /> */}
         <View>
-          <Text>Bezier Line Chart</Text>
           <LineChart
             data={{
-              labels: ["January", "February", "March", "April", "May", "June"],
+              labels: [
+                "25.02.22",
+                "26.02.22",
+                "27.02.22",
+                "28.02.22",
+                "01.03.22",
+                "02.03.22",
+              ],
               datasets: [
                 {
-                  data: [
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                  ],
+                  data: ["200", "10", "250", "400", "100", "180"],
+                },
+                {
+                  data: ["100", "150", "100", "250", "10", "300"],
+                },
+                {
+                  data: ["300", "80", "40", "200", "50", "100"],
+                },
+                {
+                  data: ["50", "100", "80", "210", "40", "50"],
+                },
+                {
+                  data: ["75", "210", "150", "90", "270", "350"],
                 },
               ],
             }}
-            width={Dimensions.get("window").width} // from react-native
-            height={220}
+            width={800} // from react-native
+            height={520}
             yAxisLabel="$"
             yAxisSuffix="k"
             yAxisInterval={1} // optional, defaults to 1
             chartConfig={{
-              backgroundColor: "#e26a00",
-              backgroundGradientFrom: "#fb8c00",
-              backgroundGradientTo: "#ffa726",
+              backgroundColor: "#FFFFF",
+              backgroundGradientFrom: "#EFF5FD",
+              backgroundGradientTo: "#EFF5FD",
               decimalPlaces: 2, // optional, defaults to 2dp
-              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-              labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+              color: (opacity = 1) => `rgb(255,255,255), ${opacity})`,
+              labelColor: (opacity = 1) => `rgb(255,255,255), ${opacity})`,
               style: {
-                borderRadius: 16,
+                borderRadius: 1,
               },
               propsForDots: {
-                r: "6",
-                strokeWidth: "2",
-                stroke: "#ffa726",
+                r: "4",
+                strokeWidth: "1",
+                stroke: "lightblue",
               },
             }}
             bezier
