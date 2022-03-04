@@ -44,7 +44,7 @@ export default function Stats({ navigation }) {
           </View>
           {/* Average of all */}
           <View style={{ flexDirection: "row" }}>
-            <Text style={[styles.fontNormal, { color: "black" }]}>⋯</Text>
+            <Text style={[styles.fontNormal, { color: "black" }]}>⎯</Text>
             <Text style={styles.fontNormal}>Average of all</Text>
           </View>
         </View>
@@ -64,7 +64,7 @@ export default function Stats({ navigation }) {
             ],
             datasets: [
               {
-                data: ["0.52", "0.5", "0.7", "0.6", "0.5", "0.67"],
+                data: ["0.52", "0.5", "0.7", "0.65", "0.5", "0.67"],
                 color: () => "red",
               },
               {
@@ -84,7 +84,7 @@ export default function Stats({ navigation }) {
                 color: () => "lightblue",
               },
               {
-                data: ["0.42", "0.42", "0.48", "0.48", "0.48", "0.44"],
+                data: ["0.53", "0.57", "0.57", "0.57", "0.56", "0.59"],
                 color: () => "black",
               },
             ],

@@ -18,7 +18,7 @@ export default function Profile({ navigation }) {
   const [text2, onChangeText2] = useState("Last 48 hours of health tracking");
   const [text3, onChangeText3] = useState("");
   const [text4, onChangeText4] = useState(
-    "One full day of recorded voice data"
+    "Last 24 hours of recorded voice data"
   );
   const [text5, onChangeText5] = useState("");
   const {
