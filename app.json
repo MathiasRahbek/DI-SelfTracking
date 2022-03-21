@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DI-ST",
-    "slug": "DI-ST",
+    "name": "USERS - ASSIGNMENT #1 DESIGNING INTERACTIONS",
+    "slug": "di-users",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
